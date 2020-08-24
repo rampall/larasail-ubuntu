@@ -44,8 +44,14 @@ do
 done
 
 if [ -e $sitesAvailable$domain ]; then
-	redbg "This domain already exists.\nPlease Try Another one"
-	exit;
+	redbg "This domain already exists. Will try deleting it"
+fi
+
+if [ -e $sitesAvailable$domain ]; then
+	redbg "Deleting domain from sites-available"	
+	sudo rm $sitesAvailable$domain
+	redbg "Deleting domain from sites-enabled"	
+	sudo rm $sitesEnable$domain
 fi
 
 
