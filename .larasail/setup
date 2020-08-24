@@ -122,6 +122,7 @@ bar
 cyan "| Adding the Laravel Installer "
 bar
 
+mkdir ~/.composer
 sudo chown -R $USER:$USER ~/.composer/
 composer global require "laravel/installer"
 
